@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Share+Tech&display=swap');
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    padding: 1rem;
+    font-family: "Figtree", sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+    transition: opacity 1s ease;
+}
+
+.border-anim {
+    position: relative;
+    display: inline-block;
+}
+
+.snake {
+    position: absolute;
+    inset: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    pointer-events: none;
+    overflow: visible;
+}
+
+.snake rect {
+    fill: none;
+    stroke: rgb(217, 212, 212);
+    stroke-width: 4;
+    stroke-linecap: round;
+    rx: 8;
+    ry: 8;
+    stroke-dasharray: 60 1000;
+    animation: snake-loop 3.5s linear infinite;
+}
+
+
+@keyframes snake-loop {
+    to {
+        stroke-dashoffset: -1060;
+    }
+}
+
+
+
+.card .hdr-x {
+    font-size: small;
+    display: block;
+    text-align: right;
+}
+
+.card .hdr-n {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.card.hoverd {
+    opacity: 0.1;
+}
+
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (min-width: 769px) {
+    .vp:before {
+        content: "\01F310";
+        font-size: small;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .vp:before {
+        content: "\2630";
+        font-size: small;
+        display: block;
+    }
+}
+
+#overcard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    font-family: "Share Tech", sans-serif;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    /* prevents blocking hover detection */
+    transition: opacity 1s ease;
+
+}
+
+#overcard.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#email-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgb(217, 212, 212);
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    font-family: "Share Tech", sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+    z-index: 9999;
+}
+
+#email-popup.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#email-popup a {
+    color: black;
+    text-decoration: none;
+}
+
+#email-popup a:hover {
+    text-decoration: underline;
+}
+
+.card, #overcard, #email-popup, a {
+    cursor: url('cursor.svg'), pointer;
+}
