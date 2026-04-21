@@ -19,7 +19,7 @@ const posts = (await getCollection('blog')).sort(
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main id="main-content">
 			<ul class="entry-list">
 				{
 					posts.map((post) => (

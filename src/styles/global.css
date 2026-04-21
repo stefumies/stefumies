@@ -66,6 +66,12 @@ a:hover {
 	color: var(--accent-hover);
 }
 
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
 strong, b { font-weight: 700; }
 
 blockquote {
