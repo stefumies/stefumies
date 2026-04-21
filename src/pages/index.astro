@@ -18,6 +18,7 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
+	<a href="#main-content" class="skip-link">Skip to main content</a>
 		<Header />
 		<main id="main-content">
 			<ul class="entry-list">
