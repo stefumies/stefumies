@@ -1,0 +1,32 @@
+---
+const today = new Date();
+---
+
+<footer>
+	<p>
+		&copy; {today.getFullYear()} Steve Davies &mdash;
+		<a href="https://www.linkedin.com/in/stevemdavies/" target="_blank" rel="noopener">LinkedIn</a>
+		&middot;
+		<a href="mailto:stefumies@outlook.com">email</a>
+	</p>
+</footer>
+
+<style>
+	footer {
+		border-top: 1px solid var(--border);
+		padding: 2rem 1rem 3rem;
+		text-align: center;
+	}
+	footer p {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		font-size: 0.85rem;
+		color: var(--text-muted);
+	}
+	footer a {
+		color: var(--text-muted);
+	}
+	footer a:hover {
+		color: var(--text);
+	}
+</style>
