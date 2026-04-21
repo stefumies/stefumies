@@ -6,39 +6,59 @@ import Header from '../components/Header.astro';
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title="About — stefumies." description="About Steve Davies, software developer." />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>About</h1>
-			<p>
-				With twenty-plus years in software development, I started out in project management before
-				moving fully into software design and coding. Java and the JVM have been the foundation throughout —
-				I'm Spring-certified, yet with hands-on experience across a wide range of tech Java, Clojure, Python Go, Typescript
-				Javascript and all the fruity goodness they bring, as well as working extensivley in the cloud.
-				Ive a keen obsessoin with many Programming languages and paradigms, and dabble in anything new and sparkly when I can.
-			</p>
-			<p>
-				The momentus contemporary shift towards AI, has dropped me into a new universe of ai-first, agentic engineering, and it's
-				changing not only software gets built — but how we have to think and of software, and new architectures.
-				for someone who has spent two decades doing it a certain way, that demands more than picking
-				up a new framework. Gone are the heady days of language specific design, the domain now demands more language agnostic considerations.
-			</p>
+<head>
+<BaseHead title="About — stefumies." description="About Steve Davies, software developer." />
+</head>
+<body>
+<Header />
+<main>
+<h1>About</h1>
+<p>
+<img src="/me.png" alt="Steve Davies" class="avatar" />
+With twenty-plus years in software development, I started out in project management before
+moving fully into software design and coding. Java and the JVM have been the foundation throughout —
+I'm Spring-certified, yet with hands-on experience across a wide range of tech Java, Clojure, Python Go, Typescript
+Javascript and all the fruity goodness they bring, as well as working extensivley in the cloud.
+Ive a keen obsessoin with many Programming languages and paradigms, and dabble in anything new and sparkly when I can.
+</p>
+<p>
+The momentus contemporary shift towards AI, has dropped me into a new universe of ai-first, agentic engineering, and it's
+changing not only software gets built — but how we have to think and of software, and new architectures.
+For someone who has spent two decades doing it a certain way, that demands more than picking
+up a new framework. Gone are the heady days of language specific design, the domain now demands more language agnostic considerations.
+</p>
+<p>
+This blog basically platforms my personal ramblings, musings, and ruminations on the state of software in general, and my transition to the AI universe, what's being learned, what's being unlearned, what on earth this all is, and what's being (sort of) built along the way.
+This platform itself is an experiment in agentic "wizardry," having eagerly commandeered several models to do my bidding in building this site.
+</p>
 
-			This blog basically platforms my personal ramblings, musings, and ruminations on the state of software in general, and my transition to the AI universe, what’s being learned, what’s being unlearned, what on earth this all is, and what’s being (sort of) built along the way.
-This platform itself is an experiment in agentic “wizardry,” having eagerly commandeered several models to do my bidding in building this site.
+<hr />
 
-			</p>
-
-            <hr />
-
-			<p>
-				stefumies(at)gmail.com &middot;
-				<a href="https://www.linkedin.com/in/stevemdavies/" target="_blank" rel="noopener">LinkedIn</a>
-			</p>
-		</main>
-		<Footer />
-	</body>
+<p>
+stefumies(at)gmail.com &middot;
+<a href="https://www.linkedin.com/in/stevemdavies/" target="_blank" rel="noopener">LinkedIn</a>
+</p>
+</main>
+<Footer />
+</body>
 </html>
+
+<style is:global>
+	.avatar {
+		float: right;
+		width: 10rem;
+		height: 10rem !important;
+		object-fit: cover;
+		object-position: center top;
+		margin: 0.25rem 0 1rem 1rem;
+		mix-blend-mode: multiply;
+		border-radius: 0 !important;
+		opacity: 0.85;
+		-webkit-mask-image: radial-gradient(circle at 50% 50%, black 65%, transparent 82%);
+		mask-image: radial-gradient(circle at 50% 50%, black 65%, transparent 82%);
+	}
+	[data-theme="dark"] .avatar {
+		mix-blend-mode: screen;
+		filter: invert(1);
+	}
+</style>
