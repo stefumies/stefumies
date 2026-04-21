@@ -8,6 +8,10 @@
 	--max-width: 680px;
 }
 
+html {
+	overflow-y: scroll;
+}
+
 [data-theme="dark"] {
 	--accent: #c8a882;
 	--accent-hover: #e0c9a8;

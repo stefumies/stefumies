@@ -1,11 +1,12 @@
 ---
-import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
 <header>
 	<nav>
-		<a href="/" class="site-title">{SITE_TITLE}</a>
+		<a href="/" class="site-logo" aria-label="stefumies home">
+			<span class="logo-brand">stefumies</span>
+		</a>
 		<div class="nav-links">
 			<HeaderLink href="/">entries</HeaderLink>
 			<HeaderLink href="/about">about</HeaderLink>
@@ -40,16 +41,23 @@ import HeaderLink from './HeaderLink.astro';
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		height: 3.5rem;
+		height: 5rem;
 	}
-	.site-title {
-		font-weight: 700;
-		font-size: 1.1rem;
-		text-decoration: none;
+	.site-logo {
+		display: flex;
+		align-items: center;
 		color: var(--text);
-		letter-spacing: -0.02em;
+		text-decoration: none;
+		transition: color 0.15s;
 	}
-	.site-title:hover {
+	.logo-brand {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+		font-weight: 800;
+		font-size: 1.5rem;
+		letter-spacing: -0.04em;
+		line-height: 1;
+	}
+	.site-logo:hover {
 		color: var(--accent);
 	}
 	.nav-links {
@@ -59,6 +67,7 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	.nav-links a {
 		font-size: 0.9rem;
+		font-weight: 500; /* fixed — changing weight shifts layout */
 		text-decoration: none;
 		color: var(--text-muted);
 		transition: color 0.15s;

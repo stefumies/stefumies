@@ -16,9 +16,11 @@ const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 	a {
 		display: inline-block;
 		text-decoration: none;
+		font-weight: inherit; /* never change font-weight — it shifts layout */
 	}
 	a.active {
-		font-weight: bolder;
+		/* active indicator: colour + underline only — no layout-affecting properties */
 		text-decoration: underline;
+		text-underline-offset: 3px;
 	}
 </style>
