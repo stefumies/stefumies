@@ -8,6 +8,15 @@
 	--max-width: 680px;
 }
 
+[data-theme="dark"] {
+	--accent: #c8a882;
+	--accent-hover: #e0c9a8;
+	--bg: #1a1917;
+	--text: #e8e4de;
+	--text-muted: #9a9590;
+	--border: #2e2b27;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -83,6 +92,10 @@ pre {
 	border-radius: 6px;
 	padding: 1.25em;
 	overflow-x: auto;
+}
+
+[data-theme="dark"] pre {
+	background: #242220;
 }
 
 pre > code {
