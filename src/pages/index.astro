@@ -80,6 +80,12 @@ const posts = (await getCollection('blog')).sort(
 		color: var(--text-muted);
 		padding-left: 0;
 	}
+	.entry-excerpt {
+		margin: 0.4rem 0 0;
+		font-size: 0.88rem;
+		color: var(--text-muted);
+		font-style: italic;
+	}
 	@media (max-width: 480px) {
 		.entry-list a {
 			flex-direction: column;
