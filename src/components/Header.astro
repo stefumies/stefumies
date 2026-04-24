@@ -12,11 +12,18 @@ import HeaderLink from "./HeaderLink.astro";
             <HeaderLink href="/">entries</HeaderLink>
             <HeaderLink href="/about">about</HeaderLink>
             <button
+                id="music-toggle"
+                class="is-off"
+                aria-label="Toggle background music"
+                aria-pressed="false">🎵</button
+            >
+            <button
                 id="theme-toggle"
                 aria-label="Toggle dark mode"
                 aria-pressed="false">🌙</button
             >
         </div>
+        <audio id="bg-music" src="/loop.mp3" loop preload="none"></audio>
     </nav>
 </header>
 
@@ -38,6 +45,33 @@ import HeaderLink from "./HeaderLink.astro";
         localStorage.setItem("theme", next);
         updateIcon();
     });
+
+    (function () {
+        const btn = document.getElementById("music-toggle");
+        const audio = document.getElementById("bg-music");
+        if (!btn || !audio) return;
+        audio.volume = 0.15;
+        function apply(state) {
+            const on = state === "on";
+            btn.classList.toggle("is-off", !on);
+            btn.setAttribute("aria-pressed", String(on));
+        }
+        apply(localStorage.getItem("music") ?? "off");
+        btn.addEventListener("click", () => {
+            const next =
+                (localStorage.getItem("music") ?? "off") === "on"
+                    ? "off"
+                    : "on";
+            localStorage.setItem("music", next);
+            apply(next);
+            if (next === "on") {
+                const p = audio.play();
+                if (p && typeof p.catch === "function") p.catch(() => {});
+            } else {
+                audio.pause();
+            }
+        });
+    })();
 </script>
 
 <style>
@@ -96,7 +130,8 @@ import HeaderLink from "./HeaderLink.astro";
     .nav-links a.active {
         color: var(--text);
     }
-    #theme-toggle {
+    #theme-toggle,
+    #music-toggle {
         background: none;
         border: none;
         cursor: pointer;
@@ -104,9 +139,15 @@ import HeaderLink from "./HeaderLink.astro";
         color: var(--text-muted);
         padding: 0;
         line-height: 1;
-        transition: color 0.15s;
+        transition: color 0.15s, opacity 0.15s;
     }
-    #theme-toggle:hover {
+    #theme-toggle:hover,
+    #music-toggle:hover {
         color: var(--text);
+    }
+    #music-toggle.is-off {
+        opacity: 0.45;
+        text-decoration: line-through;
+        text-decoration-thickness: 0.12em;
     }
 </style>
