@@ -3,13 +3,26 @@ const today = new Date();
 ---
 
 <footer>
-	<p>
-		&copy; {today.getFullYear()} Stephen Davies &mdash;
-		<a href="https://www.linkedin.com/in/stevemdavies/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
-		&middot;
-		stefumies(at)gmail.com
+	<p class="socials">
+		<a href="https://www.linkedin.com/in/stevemdavies/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)">
+			<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+				<path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
+			</svg>
+		</a>
+		<a href="https://x.com/stefumies" target="_blank" rel="noopener" aria-label="@stefumies on X (opens in a new tab)">
+			<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+				<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+			</svg>
+		</a>
 	</p>
-	<p class="footer-subline">coder • ai explorer • software curmudgeon</p>
+	<p class="footer-subline">
+		<span class="sub-coder">coder</span>
+		<span class="sub-dot">•</span>
+		<span class="sub-ai">ai explorer</span>
+		<span class="sub-dot">•</span>
+		<span class="sub-curmudgeon">software curmudgeon</span>
+	</p>
+	<p class="copy">&copy; {today.getFullYear()} Stephen Davies</p>
 </footer>
 
 <style>
@@ -24,12 +37,59 @@ const today = new Date();
 		font-size: 0.85rem;
 		color: var(--text-muted);
 	}
+	.socials {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 0.6rem !important;
+		opacity: 0.55;
+	}
+	.socials a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--text-muted);
+		transition: color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+	}
+	.socials a:hover {
+		color: var(--accent);
+		transform: translateY(-1px);
+	}
+	.socials:hover {
+		opacity: 0.95;
+	}
+	.socials svg {
+		width: 1.35rem;
+		height: 1.35rem;
+		fill: currentColor;
+	}
+	[data-theme="dark"] .socials {
+		opacity: 0.7;
+	}
+	[data-theme="dark"] .socials:hover {
+		opacity: 1;
+	}
+	.copy {
+		margin: 0.75rem auto 0 !important;
+		font-size: 0.8rem;
+		opacity: 0.8;
+	}
 	.footer-subline {
 		font-family: "Silkscreen", monospace;
 		font-size: 0.75rem;
 		letter-spacing: 0.05em;
-		margin-top: 0.5rem !important;
+		margin-top: 0.6rem !important;
 	}
+	.sub-coder      { color: #c85a54; }
+	.sub-ai         { color: #4a90a4; }
+	.sub-curmudgeon { color: #8b7cb8; }
+	.sub-dot        { color: var(--text-muted); margin: 0 0.4em; }
+
+	[data-theme="dark"] .sub-coder      { color: #e57a74; }
+	[data-theme="dark"] .sub-ai         { color: #6ab4c8; }
+	[data-theme="dark"] .sub-curmudgeon { color: #ab9cd8; }
+
 	footer a {
 		color: var(--text-muted);
 	}

@@ -6,10 +6,13 @@
 	--text-muted: #6b6b6b;
 	--border: #e0ddd8;
 	--max-width: 680px;
+	--mesh-line: rgba(92, 64, 51, 0.28);
+	--mesh-dot: rgba(92, 64, 51, 0.28);
 }
 
 html {
 	overflow-y: scroll;
+	background-color: var(--bg);
 }
 
 [data-theme="dark"] {
@@ -19,6 +22,8 @@ html {
 	--text: #e8e4de;
 	--text-muted: #9a9590;
 	--border: #2e2b27;
+	--mesh-line: rgba(200, 168, 130, 0.22);
+	--mesh-dot: rgba(200, 168, 130, 0.28);
 }
 
 * {
@@ -29,7 +34,7 @@ body {
 	font-family: 'Space Grotesk', system-ui, sans-serif;
 	margin: 0;
 	padding: 0;
-	background-color: var(--bg);
+	background-color: transparent;
 	color: var(--text);
 	font-size: 20px;
 	line-height: 1.75;
