@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="stefumies favicon">
+  <rect width="128" height="128" rx="28" fill="#171717"/>
+  <path d="M18 88 H68 C88 88 101 78 104 62
+           C107 46 97 36 80 36 H53"
+        fill="none" stroke="#ff7a1a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M30 64 H70" fill="none" stroke="#ff7a1a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M46 40 H76" fill="none" stroke="#ff7a1a" stroke-width="18" stroke-linecap="round"/>
+</svg>

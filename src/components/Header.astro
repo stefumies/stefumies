@@ -5,7 +5,8 @@ import HeaderLink from "./HeaderLink.astro";
 <header>
     <nav aria-label="Main navigation">
         <a href="/" class="site-logo" aria-label="stefumies home">
-            <span class="logo-brand">stefumies</span>
+            <img src="/logo_pack/stefumies-logo-light.svg" alt="stefumies" class="logo-img logo-light" />
+            <img src="/logo_pack/stefumies-logo-dark.svg" alt="stefumies" class="logo-img logo-dark" />
         </a>
         <div class="nav-links">
             <HeaderLink href="/">entries</HeaderLink>
@@ -66,6 +67,15 @@ import HeaderLink from "./HeaderLink.astro";
         font-size: 1.5rem;
         letter-spacing: -0.04em;
         line-height: 1;
+    }
+    .logo-img {
+        height: 2.25rem;
+        width: auto;
+        display: block;
+    }
+    :global(html[data-theme="light"] .logo-dark),
+    :global(html[data-theme="dark"] .logo-light) {
+        display: none;
     }
     .site-logo:hover {
         color: var(--accent);
